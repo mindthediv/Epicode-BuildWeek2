@@ -29,17 +29,18 @@
   position: relative;
   z-index: 1;
 }
-.overflow {
-  overflow: auto;
+
+.listaPlaylist {
+  overflow-y: scroll;
+  height: 450px;
 }
   nav {
     position: sticky;
     left: 0;
     top: 0;
     background-color: #000000;
-    padding: 0 24px;
+    padding: 0 3px 0 24px;
     height: 89vh;
-    overflow: auto;
   }
   /* width */
 ::-webkit-scrollbar {
@@ -48,7 +49,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #020202; 
 }
  
 /* Handle */
@@ -223,11 +224,11 @@
       </div>
 
       
-        <div class="overflow">
-          <ul class="listaPlaylist">
+        <div class="overflow text-truncate">
+          <ul class="listaPlaylist text-truncate">
             <li>loreasdadadasads</li>
             <li>loreasdadadasads</li>
-            <li>loreasdadadasads</li>
+            <li class="text-truncate">loreasdadadasadasadsdafsdfgsvmknds dfklsJBNDFSak;jfbdnw;JFDNW;DFJSVndfijksvw;s</li>
             <li>loreasdadadasads</li>
             <li>loreasdadadasads</li>
             <li>loreasdadadasads</li>
