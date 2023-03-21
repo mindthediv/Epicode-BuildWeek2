@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIGHT</title>
+</head>
+<style>
+    aside {
+    font-size: 0.8rem;
+    background-color: black;
+    width: 15%;
+    padding: 5px;
+    display: flex;
+    
+}
+
+aside img {
+  width: 50px;
+  height: 50px;
+}
+aside .attivita,
+aside .notifiche {
+  padding: 5px;
+}
+aside .attivita {
+  display: flex;
+  justify-content: space-between;
+}
+aside .attivita ion-icon {
+  color: #686868;
+}
+aside .notifiche .notifica {
+  display: flex;
+  justify-content: space-between;
+}
+aside .notifiche .notifica img {
+  width: 25%;
+  height: 25%;
+  max-width: 30px;
+}
+aside .notifiche .notifica ,
+aside .notifiche .notifica {
+  color: #686868;
+}
+aside .notifiche .notifica p {
+  padding-left: 10px;
+}
+aside .notifiche .notifica  {
+  font-size: 0.6rem;
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    display: none;
+  }
+}
+
+</style>
+<body>
+
+<aside>
+
+            <div class="attivita">
+                <p>Attività amici</p>
+                <div>
+                    <ion-icon name="person-add"></ion-icon>
+                    <ion-icon name="close"></ion-icon>
+                </div>
+            </div>
+
+            <div class="notifiche">
+
+                <!-- qui si deve fare con JS, compilazione automatica -->
+                <div class="notifica">
+
+                    <img src="data:image/png;base64,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" alt="#">
+                    <p>Ma non ci sei?? Ti stiamo aspettando!</p>
+                    <span>
+                        <!-- qui si deve fare con JS, compilazione automatica -->
+                        13:45
+                    </span>
+
+                </div>
+
+                <div class="notifica">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6aGdly6KzMx61BYCHRXkUW-DGwi39rswalQ&usqp=CAU" alt="#">
+                    <p>Ho commentato la tua playlist, l'ho trovata molto interessante!</p>
+                    <span>
+                        <!-- qui si deve fare con JS, compilazione automatica -->
+                        10:34
+                    </span>
+
+                </div>
+
+                <div class="notifica">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF_7Un91i_4vASJDWx8KuwfjVIgYUtEz_41A&usqp=CAU" alt="#">
+                    <p>Perché non ascolti questo brano? Ti piacerà sicuramente!</p>
+                    <span>
+                        <!-- qui si deve fare con JS, compilazione automatica -->
+                        8:12
+                    </span>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    <aside>
+
+        <div id="attivita">
+            <p>Attività amici</p>
+            <div>
+                <ion-icon name="person-add"></ion-icon>
+                <ion-icon name="close"></ion-icon>
+            </div>
+        </div>
+
+        <div id="notifiche">
+
+            <!-- qui si deve fare con JS, compilazione automatica -->
+            <div class="notifica">
+
+                <img src="data:image/png;base64,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" alt="#">
+                <p>Ma non ci sei?? Ti stiamo aspettando!</p>
+                <span>
+                    <!-- qui si deve fare con JS, compilazione automatica -->
+                    13:45
+                </span>
+
+            </div>
+
+            <div class="notifica">
+
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6aGdly6KzMx61BYCHRXkUW-DGwi39rswalQ&usqp=CAU" alt="#">
+                <p>Ho commentato la tua playlist, l'ho trovata molto interessante!</p>
+                <span>
+                    <!-- qui si deve fare con JS, compilazione automatica -->
+                    10:34
+                </span>
+
+            </div>
+
+            <div class="notifica">
+
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF_7Un91i_4vASJDWx8KuwfjVIgYUtEz_41A&usqp=CAU" alt="#">
+                <p>Perché non ascolti questo brano? Ti piacerà sicuramente!</p>
+                <span>
+                    <!-- qui si deve fare con JS, compilazione automatica -->
+                    8:12
+                </span>
+
+            </div>
+
+        </div>
+
+    </aside>
+</body>
+</html>
