@@ -1,0 +1,200 @@
+html,
+body {
+  /* margin: 0;
+  padding: 0; */
+  /* box-sizing: border-box; */
+}
+
+/* SIDELEFT */
+ul {
+  padding: 0;
+  list-style: none;
+  color: rgb(128, 122, 122);
+}
+.luigi {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: black;
+  /* overflow: auto; */
+}
+
+.overflow ul {
+  position: relative;
+  z-index: 1;
+}
+
+.listaPlaylist {
+  overflow-y: scroll;
+  height: 450px;
+}
+nav {
+  position: sticky;
+  left: 0;
+  top: 0;
+  background-color: #000000;
+  padding: 0 3px 0 24px;
+  height: 89vh;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #020202;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+nav .navigation ul {
+  list-style: none;
+}
+
+nav .navigation ul li {
+  padding: 10px 0px;
+}
+
+nav .navigation ul li a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+nav .navigation ul li a:hover,
+nav .navigation ul li a:active,
+nav .navigation ul li a:focus {
+  color: #ffffff;
+}
+
+nav .navigation ul li a .fa {
+  font-size: 13px;
+  margin-right: 10px;
+}
+
+nav .navigation ul li a .fa:hover,
+nav .navigation ul li a .fa:active,
+nav .navigation ul li a .fa:focus {
+  color: #b3b3b3;
+}
+
+nav ul li span {
+  font-size: 1.2em;
+  margin: 0.7em;
+}
+
+#cuore {
+  padding: 6px;
+  background: rgb(67, 26, 182);
+  background: linear-gradient(
+    120deg,
+    rgba(67, 26, 182, 1) 0%,
+    rgba(123, 143, 137, 1) 100%
+  );
+}
+
+#episodi {
+  padding: 6px;
+  background: #004537;
+}
+
+hr {
+  color: gray;
+}
+
+/* SIDERIGHT */
+
+aside {
+  font-size: 0.8rem;
+  background-color: black;
+  width: 15%;
+  padding: 5px;
+  display: flex;
+}
+
+aside img {
+  width: 50px;
+  height: 50px;
+}
+aside .attivita,
+aside .notifiche {
+  padding: 5px;
+}
+aside .attivita {
+  display: flex;
+  justify-content: space-between;
+}
+aside .attivita ion-icon {
+  color: #686868;
+}
+aside .notifiche .notifica {
+  display: flex;
+  justify-content: space-between;
+}
+aside .notifiche .notifica img {
+  width: 25%;
+  height: 25%;
+  max-width: 30px;
+}
+aside .notifiche .notifica,
+aside .notifiche .notifica {
+  color: #686868;
+}
+aside .notifiche .notifica p {
+  padding-left: 10px;
+}
+aside .notifiche .notifica {
+  font-size: 0.6rem;
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    display: none;
+  }
+}
+
+/* PLAYER */
+
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="range"] {
+    overflow: hidden;
+    width: 110px;
+    border-radius: 2em;
+    -webkit-appearance: none;
+    background-color: #808080;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: #16eb16;
+    margin-top: -1px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 10px;
+    cursor: ew-resize;
+    background: #797979;
+    box-shadow: -80px 0 0 80px #f1f1f1;
+  }
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+  background-color: #43e5f7;
+}
+input[type="range"]::-moz-range-track {
+  background-color: #9a905d;
+}
