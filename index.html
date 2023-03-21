@@ -22,13 +22,15 @@
     top: 0;
     z-index: 2;
     background-color: black;
+    /* overflow: auto; */
   }
-  nav {
-    overflow: scroll;
-  }
+
 .overflow ul {
   position: relative;
   z-index: 1;
+}
+.overflow {
+  overflow: auto;
 }
   nav {
     position: sticky;
@@ -37,7 +39,27 @@
     background-color: #000000;
     padding: 0 24px;
     height: 89vh;
+    overflow: auto;
   }
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 
   nav .navigation ul {
     list-style: none;
@@ -201,40 +223,40 @@
       </div>
 
       
-      <div class="overflow">
-        <ul>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-          <li>loreasdadadasads</li>
-        </ul>
-      </div>
+        <div class="overflow">
+          <ul class="listaPlaylist">
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+            <li>loreasdadadasads</li>
+          </ul>
+        </div>
     </nav>
   </div>
 
