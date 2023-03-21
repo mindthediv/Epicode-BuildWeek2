@@ -1,5 +1,7 @@
 html,
-body {
+body { width: 100%;
+  
+  
   /* margin: 0;
   padding: 0; */
   /* box-sizing: border-box; */
@@ -26,7 +28,7 @@ ul {
 
 .listaPlaylist {
   overflow-y: scroll;
-  height: 450px;
+  height: 150px;
 }
 nav {
   position: sticky;
@@ -104,7 +106,7 @@ nav ul li span {
 }
 
 #episodi {
-  padding: 6px;
+  padding: 10px;
   background: #004537;
 }
 
@@ -114,56 +116,72 @@ hr {
 
 /* SIDERIGHT */
 
-aside {
+#dx {
   font-size: 0.8rem;
   background-color: black;
-  width: 15%;
-  padding: 5px;
-  display: flex;
+  color: white;
+  padding: 12px;
+  display: block;
 }
 
-aside img {
+ img {
   width: 50px;
   height: 50px;
 }
-aside .attivita,
-aside .notifiche {
-  padding: 5px;
+ .attivita,
+ .notifiche {
+  padding: 0px;
 }
-aside .attivita {
+ .attivita {
   display: flex;
   justify-content: space-between;
 }
-aside .attivita ion-icon {
+ .attivita ion-icon {
   color: #686868;
 }
-aside .notifiche .notifica {
+ .notifiche .notifica {
   display: flex;
   justify-content: space-between;
 }
-aside .notifiche .notifica img {
+ .notifiche .notifica img {
   width: 25%;
   height: 25%;
-  max-width: 30px;
-}
-aside .notifiche .notifica,
-aside .notifiche .notifica {
-  color: #686868;
-}
-aside .notifiche .notifica p {
-  padding-left: 10px;
-}
-aside .notifiche .notifica {
-  font-size: 0.6rem;
+  max-width: auto;
 }
 
+ .notifiche .notifica {
+  color: #686868;
+  font-size: 0.6rem;
+}
+ .notifiche .notifica p {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.container-fluid{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container-fluid .row{
+  margin-left: 0;
+  margin-right: 0;
+  
+}
+
+
+
 @media screen and (max-width: 768px) {
-  aside {
+  #dx {
     display: none;
   }
 }
 
 /* PLAYER */
+
+#player{
+  width: 100%;
+}
 
 /*Chrome*/
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
