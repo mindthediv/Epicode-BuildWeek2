@@ -17,9 +17,26 @@ let getAlbum = async () => {
     tracklist = albumData.tracks.data;
     console.log(tracklist[1]);
     for (let i = 0; i < tracklist.length; i++) {
-      questaUl.innerHTML += `<li>${tracklist[i].title}</li>`;
+      let trackResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/track/${tracklist[i].id}`);
+      if (trackResponse.ok) {
+        let trackData = await trackResponse.json();
+       
+        let duration = formatDuration(trackData.duration);
+        questaUl.innerHTML += `<li>${tracklist[i].title} - Visualizzazioni: ${trackData.nb_views} - Durata: ${duration}</li>`;
+      }
     }
     popolaAlbum(albumData.cover_big, albumData.title);
   }
 };
+
+// Funzione per formattare la durata in formato "mm:ss"
+function formatDuration(duration) {
+  let minutes = Math.floor(duration / 60);
+  let seconds = duration % 60;
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  return `${minutes}:${seconds}`;
+}
+
 getAlbum();
