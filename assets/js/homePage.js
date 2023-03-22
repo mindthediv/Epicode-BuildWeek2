@@ -7,10 +7,10 @@ let createPlaylist = (dataImg, dataTitle, dataId) => {
   let newPlaylist = document.createElement("div");
   newPlaylist.setAttribute(
     "class",
-    "col col-4 d-flex align-items-center bg-dark p-0 m-2"
+    "col col-4 d-flex align-items-center bg-dark p-3 m-2 fs-5  justify-content-between"
   );
   newPlaylist.style = "width: 30%";
-  newPlaylist.innerHTML = `<img src="${dataImg}" width="80" alt="" class="me-4"><a style='text-decoration: none ; color:white;' href="./albumPage.html?album_id=${dataId}" <h6>${dataTitle}</h6>`;
+  newPlaylist.innerHTML = `<div><img src="${dataImg}" width="80" alt="" class=" position-relative me-4"><a style='text-decoration: none ; color:white;' href="./albumPage.html?album_id=${dataId}" <h6>${dataTitle}</h6></div> <i style="color: #1ed760;" class="bi bi-play-circle-fill fs-1 z-3"></i>`;
   playlistGrid.appendChild(newPlaylist);
 };
 
@@ -45,7 +45,7 @@ let FORYOU_PARAM = "q=happy";
 let createBox = (boxImg, albumId, boxTitle, boxArtist, artistId, appendRow) => {
   let newCol = document.createElement("div");
   newCol.setAttribute("class", "col-2");
-  newCol.innerHTML = `<div class="fetchBox p-3 d-flex flex-column text-light bg-dark rounded"> <img class="rounded mb-2" src="${boxImg}" style="max-width: 160px" alt="" /> <div class="text-start"> <a href="./albumPage.html?album_id=${albumId}"  style="text-decoration: none; color: white;"><h6 class="text-truncate">${boxTitle}</h6></a><span class="text-secondary"><a href="./artistPage?artist_id=${artistId}" style="text-decoration: none; color: grey;" class='text-truncate'>${boxArtist}</a></span></div></div>`;
+  newCol.innerHTML = `<div style="position:relative" class="fetchBox pt-4 p-3 d-flex flex-column text-light bg-dark rounded"> <img class="rounded mb-2" src="${boxImg}" style="max-width: 78%; margin:0 auto" alt="" /> <i style="color: #1ed760; position:absolute; bottom:75px; right:50px" class="shadow bi bi-play-circle-fill fs-1 z-3"></i> <div style:"margin:0 auto" class="d-flex flex-column px-4 mx-1 align-items-start"> <a href="./albumPage.html?album_id=${albumId}"  style="text-decoration: none; color: white;"><h6 class="text-truncate">${boxTitle}</h6></a><span class="text-secondary"><a href="./artistPage?artist_id=${artistId}" style="text-decoration: none; color: grey;" class='text-truncate'>${boxArtist}</a></span></div></div>`;
 
   appendRow.appendChild(newCol);
 };
