@@ -1,6 +1,6 @@
-const SEARCH_URL = "https://striveschool-api.herokuapp.com/api/deezer/album/";
+const SEARCH_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 // FINCHE NON LINKIAMO LE PAGINE IN UN UNICO BRANCH LAVORIAMO CON UN PARAMETRO STATICO
-let param_id = 75621062; // <- DIVENTERA' - - -> new URLSearchParams(window.location.search).get("album_id");
+let param_id = 412; // <- DIVENTERA' - - -> new URLSearchParams(window.location.search).get("artist_id");
 
 const questoDiv = document.getElementById("questoDiv");
 let tracklist = [];
@@ -13,13 +13,9 @@ let popolaAlbum = (albumImg, albumTitle) => {
 let getAlbum = async () => {
   let response = await fetch(SEARCH_URL + param_id);
   if (response.ok) {
-    let albumData = await response.json();
-    tracklist = albumData.tracks.data;
-    console.log(tracklist[1]);
-    for (let i = 0; i < tracklist.length; i++) {
-      questaUl.innerHTML += `<li>${tracklist[i].title}</li>`;
-    }
-    popolaAlbum(albumData.cover_big, albumData.title);
+    let artistData = await response.json();
+    console.log(artistData);
+    popolaAlbum(artistData.picture_big, artistData.name);
   }
 };
 getAlbum();
