@@ -58,6 +58,40 @@
           color: #3d91f4;
           font-size: 1.6em;
         }
+        /*  */
+        #questaUl li {
+          color: white;
+          padding: 1em;
+        }
+        #questaUl li:hover {
+          background-color: rgb(67, 68, 68);
+        }
+        
+        .verde {
+          background-color: #1ED760;
+          border: none;
+          scale: 2;
+          border-radius: 50%;
+        }
+        .verde:hover {
+          scale: 2.1;
+        }
+        .bi-three-dots:hover {
+          fill: white;
+        }
+        #bordo {
+          border: 1px solid gray;
+          transition: 0s;
+        }
+        #bordo:hover {
+          border-color: white;
+        }
+        #artistaPiaciuto {
+          color: gray;
+        }
+        .sottoGrigio:hover {
+          text-decoration: underline;
+        } 
     </style>
   </head>
 
@@ -324,7 +358,7 @@
               id="trasparente"
             >
               <div class="col col-6 d-flex align-items-center">
-                <button class="btn btn-dark freccia">
+                <button class="btn btn-dark freccia ms-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -359,15 +393,18 @@
               <div
                 class="col col-6 d-flex justify-content-end align-items-center"
               >
-                <div class="d-flex align-items-center">
+                <button class="btn d-flex align-items-center bg-black text-bg-dark rounded-pill me-2 p-0">
                   <img
-                    src="https://placekitten.com/700"
+                    src="https://placekitten.com/300"
                     width="30"
-                    class="rounded-circle"
+                    class="rounded-circle me-2"
                     alt=""
                   />
-                  <h6 class="text-bg-dark rounded-pill py-1">Nome Utente</h6>
-                </div>
+                  <h6 class="m-0 me-3">Nome Utente</h6>
+                  <svg class="mt-1 me-2" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                  </svg>
+                </button>
               </div>
             </div>
             <!-- ROW MAIN CARD -->
@@ -376,16 +413,16 @@
               
             </div>
             <!-- </div> --> 
-            <div class="row">
+            <div class="row m-4 mt-5">
               <div class="col col-12">
-                <button>play</button>
-                <button>FOLLOWING</button>
+                <button type="button" class="verde me-5"><i class="bi bi-play-fill"></i></button>
+                <button type="button" id="bordo" class="me-4 btn bg-darker text-light fw-bold">FOLLOWING</button>
                 <a href="#">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="25"
                     height="25"
-                    fill="currentColor"
+                    fill="gray"
                     class="bi bi-three-dots"
                     viewBox="0 0 16 16"
                   >
@@ -397,21 +434,27 @@
               </div>
               
             </div>
-            <div class="row">
+            <div class="row m-2 my-4">
               <div class="col col-6">
-                <h2 class="text-light">Popolari</h2>
+                <h2 class="text-light mb-3">Popolari</h2>
                 <ol id="questaUl"></ol>
                 <a href="#" class="text-decoration-none">
-                  <p class="text-secondary">VISUALIZZA ALTRO</p>
+                  <p class="text-secondary sottoGrigio d-inline-block">VISUALIZZA ALTRO</p>
                 </a>
               </div>
               <div class="col col-6">
-                <h2 class="text-light">Brani che ti piacciono</h2>
+                <h2 class="text-light mb-3">Brani che ti piacciono</h2>
                 <div class="d-flex">
-                  <img src="" alt="">
+                  <img
+                  class="rounded-circle me-2"
+                  src="https://placekitten.com/50"
+                  alt="#"
+                />
                   <div>
-                    <p>Hai messo mi piace a x brani</p>
-                    <p>Di </p>
+                    <p class="mb-2">Hai messo mi piace a 3 brani</p>
+                    <a href="#" class="text-decoration-none">
+                      <p id="artistaPiaciuto" class="sottoGrigio">Di Gianni Morandi</p>
+                    </a>
                   </div>
                 </div>
               </div>

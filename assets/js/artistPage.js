@@ -15,7 +15,7 @@ let popolaAlbum = (albumImg, albumTitle, nb_fan, tracklist) => {
           <p><i class="bi bi-patch-check-fill"></i>
           Artista verificato</p>
           <h1>${albumTitle}</h1>
-          <p>${nb_fan} ascoltatori mensili</p> api/deezer/artist/412/top?
+          <p>${nb_fan} ascoltatori mensili</p>
         </div>
       </div>
     </div>
@@ -35,7 +35,8 @@ let getTracks = async () => {
     let tracklist = trackData.data;
     tracklist.forEach((track) => {
       let liTrack = document.createElement('li');
-      liTrack.innerHTML = `${track.title_short} - ${track.rank} - ${track.duration}`;
+      liTrack.innerHTML = `<div class="d-flex justify-content-around align-items-center">
+      <img class="" src="${track.album.cover_small}" alt="">${track.title_short} ${track.rank} ${track.duration}</div>`;
       questaUl.appendChild(liTrack)
     }); 
   }
