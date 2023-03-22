@@ -1,0 +1,172 @@
+// GLOBALI
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//   SCROLLBARS
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #020202;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* SIDELEFT */ ///////////////////////
+nav {
+  position: relative;
+  background-color: #000000;
+  padding: 0 3px 0 24px;
+  height: 100vh;
+  .upLeft {
+    position: sticky;
+    top: 0;
+  }
+  ul {
+    padding: 0;
+    list-style: none;
+    color: rgb(128, 122, 122);
+    hr {
+      color: gray;
+    }
+    li span {
+      font-size: 1.2em;
+      margin: 0.7em;
+    }
+  }
+  .navigation {
+    #cuore {
+      padding: 6px;
+      background: rgb(67, 26, 182);
+      background: linear-gradient(
+        120deg,
+        rgba(67, 26, 182, 1) 0%,
+        rgba(123, 143, 137, 1) 100%
+      );
+    }
+    #episodi {
+      padding: 10px;
+      background: #004537;
+    }
+    ul {
+      list-style: none;
+      li {
+        padding: 10px 0px;
+        a {
+          color: #b3b3b3;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 12px;
+          .fa {
+            font-size: 13px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+  .playlistList {
+    overflow-y: scroll;
+    height: 50%;
+  }
+}
+
+nav .navigation ul li a:hover,
+nav .navigation ul li a:active,
+nav .navigation ul li a:focus {
+  color: #ffffff;
+}
+
+nav .navigation ul li a .fa:hover,
+nav .navigation ul li a .fa:active,
+nav .navigation ul li a .fa:focus {
+  color: #b3b3b3;
+}
+
+// CENTER /////////////////////////
+#center {
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 0;
+  .freccia {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+    position: relative;
+  }
+  .freccia svg {
+    position: absolute;
+    top: 8px;
+    left: 7px;
+  }
+}
+
+/* SIDERIGHT */ ////////////////
+#dx {
+  font-size: 0.8rem;
+  background-color: black;
+  color: white;
+  padding: 12px;
+  display: block;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #dx {
+    display: none;
+  }
+}
+/* PLAYER */ ////////////////////////
+#player {
+  width: 100%;
+  background-color: black;
+  // slider volume
+  /*Chrome*/
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type="range"] {
+      overflow: hidden;
+      width: 110px;
+      border-radius: 2em;
+      -webkit-appearance: none;
+      background-color: #808080;
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 10px;
+      -webkit-appearance: none;
+      color: #16eb16;
+      margin-top: -1px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      width: 10px;
+      -webkit-appearance: none;
+      height: 10px;
+      cursor: ew-resize;
+      background: #797979;
+      box-shadow: -80px 0 0 80px #f1f1f1;
+    }
+  }
+  /** FF*/
+  input[type="range"]::-moz-range-progress {
+    background-color: #43e5f7;
+  }
+  input[type="range"]::-moz-range-track {
+    background-color: #9a905d;
+  }
+}
