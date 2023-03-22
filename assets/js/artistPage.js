@@ -35,8 +35,26 @@ let getTracks = async () => {
     let tracklist = trackData.data;
     tracklist.forEach((track) => {
       let liTrack = document.createElement('li');
-      liTrack.innerHTML = `<div class="d-flex justify-content-around align-items-center">
-      <img class="" src="${track.album.cover_small}" alt="">${track.title_short} ${track.rank} ${track.duration}</div>`;
+      liTrack.innerHTML = `<div class="container">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="row custom-row-1 mt-n3">
+            <div class="col-md-1 pr-0 pl-0">
+              <img class="img-fluid" src="${track.album.cover_small}" alt="">
+            </div>
+            <div class="col-md-5 pr-0 pl-0">
+              <span class="mt-2">${track.title_short}</span>
+            </div>
+            <div class="col-md-3">
+              <span>${track.rank}</span>
+            </div>
+            <div class="col-md-3">
+              <span>${track.duration}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>`;
       questaUl.appendChild(liTrack)
     }); 
   }
