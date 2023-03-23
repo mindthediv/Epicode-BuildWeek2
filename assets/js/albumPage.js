@@ -11,10 +11,12 @@ const mainCard = document.getElementById("mainCard");
 const mainCol = document.getElementById("mainCol");
 const trackOrder = document.getElementById("trackOrder");
 const artistAvatar = document.getElementById("artistAvatar");
+const alsoRow = document.getElementById("alsoRow");
+const h2AlsoRow = document.getElementById("h2AlsoRow");
 
 let tracklist = [];
 const questaUl = document.getElementById("questaUl");
-
+// POPOLA LA AERO DELL'ALBUM
 let popolaAlbum = (
   albumImg,
   albumTitle,
@@ -36,6 +38,14 @@ let popolaAlbum = (
   artistAvatar.setAttribute("src", `${artistPic}`);
   artistAvatar.style = "margin-right: 1em";
 };
+// CREA E POPOLA LA BOX DA "APPENDARE" IN UNA ROW
+let createBox = (boxImg, albumId, boxTitle, boxArtist, artistId, appendRow) => {
+  let newCol = document.createElement("div");
+  newCol.setAttribute("class", "col-2");
+  newCol.innerHTML = `<div style="position:relative" class="fetchBox pt-4 p-3 d-flex flex-column text-light bg-dark rounded"> <img class="rounded mb-2" src="${boxImg}" style="max-width: 78%; margin:0 auto" alt="" /><div style:"margin:0 auto" class="d-flex flex-column px-4 mx-1 align-items-start"><button type="button" style="position:absolute;top:54%;right:17%;background-color:#1ED760;border: none; scale: 2.5; border-radius: 50%;" class="verde me-4"><i class="bi bi-play-fill"></i></button> <a href="./albumPage.html?album_id=${albumId}"  style="text-decoration: none; color: white;"><h6 class="text-truncate">${boxTitle}</h6></a><span class="text-secondary"><a href="./artistPage?artist_id=${artistId}" style="text-decoration: none; color: grey;" class='text-truncate'>${boxArtist}</a></span></div></div>`;
+
+  appendRow.appendChild(newCol);
+};
 
 // FETCH E AVVIO CREAZIONE ELEMENTI
 let getAlbum = async () => {
@@ -43,6 +53,9 @@ let getAlbum = async () => {
   if (response.ok) {
     let albumData = await response.json();
     console.log(albumData);
+    const getArtistTracks = () => {
+      return `https://striveschool-api.herokuapp.com/api/deezer/artist/${albumData.artist.id}/top?limit=50`;
+    };
     popolaAlbum(
       albumData.cover_big,
       albumData.title,
@@ -53,6 +66,7 @@ let getAlbum = async () => {
       albumData.artist.picture_small
     );
 
+    // TRACKLIST GENERATION
     tracklist = albumData.tracks.data;
     for (let i = 0; i < tracklist.length; i++) {
       let trackResponse = await fetch(
@@ -67,7 +81,7 @@ let getAlbum = async () => {
         }
         trackOrder.innerHTML += `<div id="tracklistWrap-${
           i + 1
-        }" class="trackWrap text-light d-flex align-items-center py-2" style="width: 90%; margin: 0 auto"><span class="px-4" style="color: lightgray">${
+        }" class="trackWrap text-light d-flex align-items-center py-2" style="width: 90%; margin: 0 auto"><span class="numberPlayIcon px-4" style="color: lightgray">${
           i + 1
         }</span><div class="d-flex flex-column " style="width: 60%"><span style="width: 100%">${
           tracklist[i].title
@@ -80,6 +94,47 @@ let getAlbum = async () => {
         )}</span> <span style="width: 10%; text-align: right; color: lightgray;">${duration}</span></div>`;
       }
     }
+    const trackWrap = Array.from(document.querySelectorAll(".trackWrap"));
+
+    trackWrap.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        const numPlayHover = el.firstChild;
+        let trackIndex = numPlayHover.innerHTML;
+        numPlayHover.innerHTML = '<i class="bi bi-play-fill"></i>';
+        el.addEventListener("mouseleave", () => {
+          const numPlayHover = el.firstChild;
+
+          numPlayHover.innerHTML = trackIndex;
+        });
+      });
+    });
+
+    // BOX ROW GENERATION (ALSOROW)
+    let getAlso = async () => {
+      try {
+        let response = await fetch(getArtistTracks());
+        console.log(response);
+        if (response.ok) {
+          let fetchData = await response.json();
+          console.log(fetchData);
+          arrayResults = fetchData.data;
+          h2AlsoRow.innerHTML = albumData.artist.name;
+          for (let j = 0; j < 5; j++) {
+            createBox(
+              arrayResults[j].album.cover_big,
+              arrayResults[j].album.id,
+              arrayResults[j].title,
+              arrayResults[j].artist.name,
+              arrayResults[j].artist.id,
+              alsoRow
+            );
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getAlso();
   }
 };
 
