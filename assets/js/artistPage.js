@@ -10,7 +10,7 @@ let popolaAlbum = (albumImg, albumTitle, nb_fan, tracklist) => {
   questoDiv.innerHTML = `
 <div class='row'>
     <div class="col col-12 pt-4 fotoArtista" style="background-image: url(${albumImg});">                
-      <div class="contenitore">
+      <div class="contenitore m-3">
         <div id="artistaVer">
           <p><i class="bi bi-patch-check-fill"></i>
           Artista verificato</p>
@@ -46,6 +46,7 @@ let getTracks = async () => {
               <span class="mt-2">${track.title_short}</span>
             </div>
             <div class="col-md-3">
+            
               <span>${track.rank}</span>
             </div>
             <div class="col-md-3">
