@@ -30,7 +30,7 @@ nav {
   position: relative;
   background-color: #000000;
   padding: 0 3px 0 24px;
-  height: 100vh;
+  height: 96vh;
 }
 nav .upLeft {
   position: sticky;
@@ -147,7 +147,7 @@ nav .navigation ul li a .fa:focus {
 /* PLAYER */
 #player {
   width: 100%;
-  background-color: black;
+  background-color: rgb(19, 18, 18);
   /*Chrome*/
   /** FF*/
 }
