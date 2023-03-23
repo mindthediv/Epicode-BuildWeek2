@@ -36,25 +36,24 @@ let getTracks = async () => {
     let tracklist = trackData.data;
     tracklist.forEach((track) => {
       let liTrack = document.createElement("li");
-      liTrack.innerHTML = `<div class="container ">
-          <div class="row custom-row-1 mt-n3 mb-3">
-            <div class="col-md-2 col-sm-3 pr-0 pl-0 d-flex d-mg-block">
-              <img class="img-fluid" src="${track.album.cover_small}" alt="">
-            </div>
-            <div class="col-md-4 col-sm-3 pr-0 pl-0 d-flex align-items-center">
-              <span class="mt-2">${track.title_short}</span>
-            </div>
-            <div class="col-md-3 col-sm-3 d-flex align-items-center">
-            
-              <span>${track.rank}</span>
-            </div>
-            <div class="col-md-3 col-sm-3 d-none d-md-flex align-items-center">
-            <span>${Math.floor(track.duration / 60)}:${(track.duration % 60)
+      liTrack.innerHTML = `
+      <div class="row ms-2">
+      <div class="col mt-3 d-flex flex-wrap align-items-center">
+        <div>
+        <img class="img-fluid" src="${track.album.cover_small}" alt="">
+        </div>
+        <div class="d-md-flex flex-md-around">
+        <p>${track.title_short}</p>
+        <p class="mt-sm-2">${track.rank}</p>
+        <p class="d-sm-none d-md-block">${Math.floor(track.duration / 60)}:${(
+        track.duration % 60
+      )
         .toString()
-        .padStart(2, "0")}</span>
-            </div>
-          </div>
-    </div>`;
+        .padStart(2, "0")}</p>
+        </div>
+    </div>
+  </div>
+      `;
       questaUl.appendChild(liTrack);
 
       miPiaceMessi.innerHTML = `<div class="d-flex">
