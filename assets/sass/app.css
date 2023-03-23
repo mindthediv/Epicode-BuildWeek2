@@ -108,6 +108,24 @@ nav .navigation ul li a .fa:focus {
   left: 7px;
 }
 
+#mainTitle {
+  font-size: 5em;
+  font-weight: bold;
+}
+
+#mainCard {
+  height: 40vh;
+}
+
+#trackOrder div.col-12 div {
+  border-bottom: 1px solid rgba(199, 199, 199, 0.2);
+}
+
+.trackWrap:hover {
+  background-color: rgb(48, 48, 48);
+  border-radius: 0.5em;
+}
+
 /* SIDERIGHT */
 #dx {
   font-size: 0.8rem;

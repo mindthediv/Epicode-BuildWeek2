@@ -25,6 +25,23 @@
     />
     <!-- sass/css  -->
     <link rel="stylesheet" href="./assets/sass/app.css" />
+
+    <style>
+      .verde {
+        background-color: #1ed760;
+        border: none;
+        scale: 2;
+        border-radius: 50%;
+      }
+
+      .verde:hover {
+        scale: 2.1;
+      }
+
+      .bi-three-dots:hover {
+        fill: white;
+      }
+    </style>
   </head>
 
   <body>
@@ -334,9 +351,88 @@
                 </div>
               </div>
               <!-- ROW MAIN CARD -->
-              <div class="row text-bg-dark">
-                <div id="questoDiv">QUESTA E LA ALBUM PAGE</div>
-                <ul id="questaUl"></ul>
+              <div class="row text-light" id="mainCard">
+                <div
+                  class="col-11 d-flex align-items-center w-100"
+                  id="mainCol"
+                >
+                  <img class="p-4" id="mainImg" width="280" alt="" />
+                  <div class="text-content w-100 text-truncate">
+                    <span>ALBUM</span>
+                    <h2 id="mainTitle" class="text-truncate">
+                      GIOVENTU BRUCIATA
+                    </h2>
+                    <span
+                      ><img
+                        class="rounded rounded-circle"
+                        id="artistAvatar"
+                        width="24"
+                        alt="" /><a id="mainArtist" href="">ArtistName</a
+                      >·<span> 2004 </span>·<span id="nTracks"></span>·<span
+                        id="totDur"
+                      ></span
+                    ></span>
+                  </div>
+                </div>
+              </div>
+              <!-- ROW BUTTONS -->
+
+              <div class="row m-4 mt-5">
+                <div class="col col-12">
+                  <button type="button" class="verde me-4 ms-4">
+                    <i class="bi bi-play-fill"></i>
+                  </button>
+                  <button
+                    type="button"
+                    id="bordo"
+                    class="btn bg-darker text-light fw-bold me-3"
+                  >
+                    <i
+                      class="bi bi-suit-heart fs-2"
+                      style="color: lightgray"
+                    ></i>
+                  </button>
+                  <button
+                    type="button"
+                    id="bordo"
+                    class="me-4 btn bg-darker text-light fw-bold"
+                  >
+                    <i
+                      class="bi bi-arrow-down-circle fs-2"
+                      style="color: lightgray"
+                    ></i>
+                  </button>
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      fill="gray"
+                      class="bi bi-three-dots"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- ROW TRACKLIST -->
+              <div class="row" id="trackOrder">
+                <div class="col-12">
+                  <div
+                    class="text-light d-flex"
+                    style="width: 90%; margin: 0 auto"
+                  >
+                    <span style="width: 60%">TITOLO</span>
+                    <span style="width: 30%">RIPRODUZIONI</span>
+                    <span style="width: 10%; text-align: right"
+                      ><i class="bi bi-clock"></i
+                    ></span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
