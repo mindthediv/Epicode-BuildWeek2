@@ -38,17 +38,17 @@ let getTracks = async () => {
       let liTrack = document.createElement("li");
       liTrack.innerHTML = `<div class="container">
           <div class="row custom-row-1 mt-n3 mb-3">
-            <div class="col-md-2 pr-0 pl-0">
+            <div class="col-md-2 col-sm-3 pr-0 pl-0">
               <img class="img-fluid" src="${track.album.cover_small}" alt="">
             </div>
-            <div class="col-md-4 pr-0 pl-0 d-flex align-items-center">
+            <div class="col-md-4 col-sm-3 pr-0 pl-0 d-flex align-items-center">
               <span class="mt-2">${track.title_short}</span>
             </div>
-            <div class="col-md-3 d-flex align-items-center">
+            <div class="col-md-3 col-sm-3 d-flex align-items-center">
             
               <span>${track.rank}</span>
             </div>
-            <div class="col-md-3 d-flex align-items-center">
+            <div class="col-md-3 col-sm-3 d-flex align-items-center">
             <span>${Math.floor(track.duration / 60)}:${(track.duration % 60)
         .toString()
         .padStart(2, "0")}</span>
