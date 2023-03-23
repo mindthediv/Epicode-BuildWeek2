@@ -97,6 +97,9 @@
     .custom-row {
       background-color: rgb(32, 30, 30);
     }
+    @media screen and (max-width 768px) {
+      
+    }
   </style>
 </head>
 
@@ -262,7 +265,7 @@
                 (ALBUM > albumAeroCard, actionBar, tracklist, row scroll)
                 (ARTIST > artistAero, actionBar, short-tracklist, row scroll) -->
         <!-- <div class="col-8 bg-success">CONTENUTO FETCH CARD ECC</div> -->
-        <div class="col col-8 m-0 centroMain" style="background-color: rgb(32, 30, 30)" id="center">
+        <div class="col col-8 col-sm-12 m-0 centroMain" style="background-color: rgb(32, 30, 30)" id="center">
           <!-- Sub Container della colonna centrale -->
           <!-- <div class="container-fluid"> -->
 
@@ -423,7 +426,7 @@
             </div>
           </div>
           <!-- right box -->
-          <div class="rightPlayer d-flex align-items-center justify-content-around fs-4 text-secondary">
+          <div class="rightPlayer d-sm-none d-md-flex align-items-center justify-content-around fs-4 text-secondary">
             <span><i class="bi bi-mic fs-5"></i></span>
             <span><i class="bi bi-list"></i></span>
             <span><i class="bi bi-speaker fs-5"></i></span>
