@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: black;
 }
 
 /* width */
@@ -91,7 +92,7 @@ nav .navigation ul li a .fa:focus {
 }
 
 #center {
-  height: 89vh;
+  height: 90%;
   overflow-y: scroll;
   padding: 0;
 }
@@ -106,10 +107,6 @@ nav .navigation ul li a .fa:focus {
   position: absolute;
   top: 8px;
   left: 7px;
-}
-
-.playerbtn2 {
-  fill: #1ed760;
 }
 
 /* SIDERIGHT */

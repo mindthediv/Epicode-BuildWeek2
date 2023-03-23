@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="./assets/sass/app.css" />
   </head>
 
-  <body>
+  <body style="background-color: black">
     <header>
       <!-- HEADER -->
     </header>
@@ -338,7 +338,7 @@
                 <div class="col col-12 d-flex">
                   <img
                     id="mainImg"
-                    src="https://placekitten.com/900"
+                    src="https://cdns-images.dzcdn.net/images/cover/8ee72b74aa6f6e07d513d2713bc85f09/264x264.jpg"
                     width="200"
                     alt=""
                   />
@@ -351,20 +351,22 @@
                       <h4>nascondi annunci</h4>
                     </div>
 
-                    <h1 id="mainTrackTitle">TITOLO</h1>
+                    <h1 id="mainTrackTitle">Burning Love</h1>
                     <h4>
                       Ascolta il nuovo singolo di
-                      <span id="mainArtist">nomi artisti</span>
+                      <span id="mainArtist">Elvis Presley</span>
                     </h4>
                     <!-- box bottoni -->
                     <div class="btn-box d-flex">
                       <button
-                        class="btn btn-success text-dark rounded-pill px-4"
+                        style="background-color: #1ed760; width: 120px"
+                        class="text-dark fw-bold rounded-pill px-4"
                         type="button"
                       >
                         Play
                       </button>
                       <button
+                        style="width: 120px"
                         class="btn btn-dark border border-light rounded-pill text-light px-4 mx-4"
                         type="button"
                       >
@@ -485,31 +487,31 @@
                   class="btn text-light"
                   style="background-color: transparent"
                 >
-                  <i class="bi bi-shuffle fs-5"></i>
+                  <i class="bi bi-shuffle fs-3"></i>
                 </button>
                 <button
                   class="btn text-light"
                   style="background-color: transparent"
                 >
-                  <i class="bi bi-skip-start-fill fs-4"></i>
+                  <i class="bi bi-skip-start-fill fs-1"></i>
                 </button>
                 <button
                   class="btn text-light"
                   style="background-color: transparent"
                 >
-                  <i class="bi bi-play-circle-fill fs-3"></i>
+                  <i style="font-size: 60px" class="bi bi-play-circle-fill"></i>
                 </button>
                 <button
                   class="btn text-light"
                   style="background-color: transparent"
                 >
-                  <i class="bi bi-skip-end-fill fs-4"></i>
+                  <i class="bi bi-skip-end-fill fs-1"></i>
                 </button>
                 <button
                   class="btn text-light"
                   style="background-color: transparent"
                 >
-                  <i class="bi bi-repeat fs-5"></i>
+                  <i class="bi bi-repeat fs-3"></i>
                 </button>
               </div>
               <!-- bottom center -->
@@ -533,21 +535,33 @@
             </div>
             <!-- right box -->
             <div
+              style="width: 16%"
               class="rightPlayer d-flex align-items-center justify-content-around fs-4 text-secondary"
             >
-              <span><i class="bi bi-mic fs-5"></i></span>
-              <span><i class="bi bi-list"></i></span>
-              <span><i class="bi bi-speaker fs-5"></i></span>
-              <label for="volume"><i class="bi bi-volume-down-fill"></i></label>
+              <button style="width: 10px" class="btn">
+                <i class="bi bi-mic fs-3"></i>
+              </button>
+              <button style="width: 10px" class="btn">
+                <i class="bi bi-list fs-3"></i>
+              </button>
+              <button style="width: 10px" class="btn">
+                <i class="bi bi-speaker fs-3"></i>
+              </button>
+              <label for="volume"
+                ><button style="width: 10px" class="btn">
+                  <i class="bi bi-volume-down-fill fs-2"></i></button
+              ></label>
               <input
-                style="color: green"
+                style="color: green; width: 170px; margin-left: 20px"
                 type="range"
                 id="volume"
                 name="volume"
                 min="0"
                 max="11"
               />
-              <span><i class="bi bi-arrows-angle-expand fs-5"></i></span>
+              <button style="width: 2px" class="btn me-2">
+                <i class="bi bi-arrows-angle-expand fs-5"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -556,9 +570,7 @@
     <footer>
       <!-- FOOTER -->
     </footer>
-
     <!-- Ionic Icons -->
-
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
