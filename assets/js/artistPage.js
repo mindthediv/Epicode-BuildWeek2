@@ -37,7 +37,7 @@ let getTracks = async () => {
     tracklist.forEach((track) => {
       let liTrack = document.createElement("li");
       liTrack.innerHTML = `
-      <div class="row d-flex align-items-center justify-content-center w-100">
+      <div class="row d-flex align-items-center justify-content-start w-100">
         <div style="width: 4.7rem;" class="mb-3 ms-3">
         <img class="img-fluid" src="${track.album.cover_small}" alt="">
         </div>
