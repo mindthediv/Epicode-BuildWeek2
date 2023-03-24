@@ -1,6 +1,6 @@
 const SEARCH_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 // FINCHE NON LINKIAMO LE PAGINE IN UN UNICO BRANCH LAVORIAMO CON UN PARAMETRO STATICO
-let param_id = 412; // <- DIVENTERA' - - -> new URLSearchParams(window.location.search).get("artist_id");
+let param_id = new URLSearchParams(window.location.search).get("artist_id");
 let trackID = "/top?limit=50";
 let miPiaceMessi = document.getElementById("miPiaceMessi");
 
