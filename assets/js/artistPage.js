@@ -24,6 +24,7 @@ let popolaAlbum = (albumImg, albumTitle, nb_fan, tracklist) => {
 </div>
 `;
 };
+//AAAAAA
 // `<img width='200' src="${albumImg}"><h2>${albumTitle}</h2>`
 // FETCH E AVVIO CREAZIONE ELEMENTI
 
