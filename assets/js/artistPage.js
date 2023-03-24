@@ -37,22 +37,23 @@ let getTracks = async () => {
     tracklist.forEach((track) => {
       let liTrack = document.createElement("li");
       liTrack.innerHTML = `
-      <div class="row ms-2">
-      <div class="col mt-3 d-flex flex-wrap align-items-center">
-        <div>
+      <div class="row d-flex align-items-center justify-content-start w-75">
+        <div style="width: 4.7rem;" class="mb-3 ms-3">
         <img class="img-fluid" src="${track.album.cover_small}" alt="">
         </div>
-        <div class="d-md-flex flex-md-around">
+        <div class="col-2 col-sm-4 justify-content-start">
         <p>${track.title_short}</p>
-        <p class="mt-sm-2">${track.rank}</p>
-        <p class="d-sm-none d-md-block">${Math.floor(track.duration / 60)}:${(
-        track.duration % 60
-      )
-        .toString()
-        .padStart(2, "0")}</p>
+        <p class="d-sm-flex d-md-none mb-sm-4">${track.rank}</p>
         </div>
-    </div>
-  </div>
+        <div class="d-sm-none d-md-flex col-sm-3">
+        <p class="mt-sm-2">${track.rank}</p>
+        </div>
+        <div class="col-3 d-flex align-items-end">
+        <p class="d-sm-none d-md-flex text-start">${Math.floor(
+          track.duration / 60
+        )}:${(track.duration % 60).toString().padStart(2, "0")}</p>
+        </div>
+      </div>
       `;
       questaUl.appendChild(liTrack);
 
