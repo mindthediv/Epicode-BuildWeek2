@@ -605,6 +605,7 @@
             <!-- left box -->
             <div class="leftPlayer d-flex align-items-center">
               <img
+                id="imgPlayer"
                 style="max-width: 75px; max-height: 75px"
                 src="https://placekitten.com/900"
                 alt=""
@@ -612,11 +613,13 @@
 
               <div>
                 <span
+                  id="songPlayer"
                   class="ms-3 fs-4"
                   style="display: block; width: fit-content"
                   >Song title</span
                 >
                 <span
+                  id="artistPlayer"
                   class="ms-3 mt-2"
                   style="display: block; width: fit-content"
                   ><small>Song Artist</small></span
@@ -664,7 +667,7 @@
               <div
                 class="bottomCenter d-flex justify-content-center align-items-center mb-4 w-100"
               >
-                <span class="me-4 text-end">0:38</span>
+                <span class="me-4 text-end">0:00</span>
                 <div
                   class="progress bg-secondary"
                   role="progressbar"
@@ -674,9 +677,9 @@
                   aria-valuemax="100"
                   style="height: 5px; width: 70%"
                 >
-                  <div class="progress-bar bg-light" style="width: 10%"></div>
+                  <div class="progress-bar bg-light" style="width: 0%"></div>
                 </div>
-                <span class="ms-4">4:21</span>
+                <span id="durationPlayer" class="ms-4">4:21</span>
               </div>
             </div>
             <!-- right box -->
