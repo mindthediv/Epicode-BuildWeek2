@@ -12,6 +12,12 @@ const trackOrder = document.getElementById("trackOrder");
 const artistAvatar = document.getElementById("artistAvatar");
 const alsoRow = document.getElementById("alsoRow");
 const h2AlsoRow = document.getElementById("h2AlsoRow");
+const imgPlayer = document.getElementById("imgPlayer");
+const songPlayer = document.getElementById("songPlayer");
+const artistPlayer = document.getElementById("artistPlayer");
+const durationPlayer = document.getElementById("durationPlayer");
+let trackArray = [];
+console.log(trackArray);
 
 let tracklist = [];
 const questaUl = document.getElementById("questaUl");
@@ -72,14 +78,14 @@ let getAlbum = async () => {
         `https://striveschool-api.herokuapp.com/api/deezer/track/${tracklist[i].id}`
       );
       if (trackResponse.ok) {
+        trackArray.push(tracklist[i]);
         let trackData = await trackResponse.json();
         let duration = formatDuration(trackData.duration);
         let rndViews = Math.floor(Math.random() * (500 * 1000000));
         while (rndViews < 1000000) {
           rndViews = Math.floor(Math.random() * (500 * 1000000));
         }
-        trackOrder.innerHTML += `<div id="tracklistWrap-${
-          i + 1
+        trackOrder.innerHTML += `<div 
         }" class="trackWrap text-light d-flex align-items-center py-2" style="width: 90%; margin: 0 auto"><span class="numberPlayIcon px-4" style="color: lightgray">${
           i + 1
         }</span><div class="d-flex flex-column " style="width: 60%"><span style="width: 100%">${
@@ -95,15 +101,31 @@ let getAlbum = async () => {
     }
     const trackWrap = Array.from(document.querySelectorAll(".trackWrap"));
 
-    trackWrap.forEach((el) => {
+    // FOREACH CHE PERMETTE AL NUMERO DI DIVENTARE IL PLAY
+
+    trackWrap.forEach((el, k) => {
       el.addEventListener("mouseenter", () => {
         const numPlayHover = el.firstChild;
         let trackIndex = numPlayHover.innerHTML;
         numPlayHover.innerHTML = '<i class="bi bi-play-fill"></i>';
         el.addEventListener("mouseleave", () => {
           const numPlayHover = el.firstChild;
-
           numPlayHover.innerHTML = trackIndex;
+        });
+
+        let iconPlay = numPlayHover.firstChild;
+        iconPlay.addEventListener("click", () => {
+          // if (numPlayHover.innerHTML === '<i class="bi bi-play-fill"></i>') {
+          //   numPlayHover.innerHTML = '<i class="bi bi-pause-fill"></i>';
+          // } else {
+          //   numPlayHover.innerHTML = '<i class="bi bi-play-fill"></i>';
+          // }
+          imgPlayer.setAttribute("src", `${trackArray[k].album.cover_medium}`);
+          songPlayer.innerHTML = `${trackArray[k].title}`;
+          artistPlayer.innerHTML = `${trackArray[k].artist.name}`;
+          durationPlayer.innerHTML = `${formatDuration(
+            trackArray[k].duration
+          )}`;
         });
       });
     });
