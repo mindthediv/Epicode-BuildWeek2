@@ -10,7 +10,7 @@ let createPlaylist = (dataImg, dataTitle, dataId) => {
     "col col-4 d-flex align-items-center bg-dark p-3 m-2 fs-5 justify-content-between"
   );
   newPlaylist.style = "width: 30%";
-  newPlaylist.innerHTML = `<div><img src="${dataImg}" width=80" alt="" class=" position-relative me-4"><a style='text-decoration: none ; color:white;' href="./albumPage.html?album_id=${dataId}" <h6 class>${dataTitle}</h6></div><button type="button" style=";background-color:#1ED760;border: none; border-radius: 50%;" class="d-none verde me-4"><i class="bi bi-play-fill"></i></button>`;
+  newPlaylist.innerHTML = `<div class="d-flex "><img src="${dataImg}" width=80" alt="" class=" position-relative me-4"><a style='text-decoration: none ; color:white;' href="./albumPage.html?album_id=${dataId}" <h6 class>${dataTitle}</h6></div><button type="button" style=";background-color:#1ED760;border: none; border-radius: 50%;" class="d-none verde me-4"><i class="bi bi-play-fill"></i></button>`;
   playlistGrid.appendChild(newPlaylist);
 };
 

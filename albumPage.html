@@ -30,14 +30,8 @@
       .verde {
         background-color: #1ed760;
         border: none;
-        scale: 2;
         border-radius: 50%;
       }
-
-      .verde:hover {
-        scale: 2.1;
-      }
-
       .bi-three-dots:hover {
         fill: white;
       }
@@ -478,7 +472,11 @@
 
               <div class="row m-4 mt-5">
                 <div class="col col-12">
-                  <button type="button" class="verde me-4 ms-4">
+                  <button
+                    type="button"
+                    class="verde me-4 ms-4 fs-2"
+                    style="width: 64px"
+                  >
                     <i class="bi bi-play-fill"></i>
                   </button>
                   <button
@@ -539,10 +537,10 @@
               </div>
               <!-- ROW -ALTRO DI- -->
               <h2 class="text-light p-5 ps-2 fw-bolder d-none d-sm-block">
-                Altro di <span class="d-none d-sm-block" id="h2AlsoRow"></span>
+                Altro di <span class="d-none d-md-block" id="h2AlsoRow"></span>
               </h2>
               <div
-                class="d-none d-sm-block"
+                class="d-none d-sm-flex"
                 id="alsoRow"
                 style="width: 90%; margin: 0 auto"
               ></div>

@@ -3,6 +3,7 @@ const SEARCH_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 let param_id = new URLSearchParams(window.location.search).get("artist_id");
 let trackID = "/top?limit=50";
 let miPiaceMessi = document.getElementById("miPiaceMessi");
+let trackArray = [];
 
 const questoDiv = document.getElementById("questoDiv");
 let tracklist = [];
@@ -34,10 +35,12 @@ let getTracks = async () => {
     let trackData = await response.json();
     console.log(trackData);
     let tracklist = trackData.data;
-    tracklist.forEach((track) => {
+
+    tracklist.forEach((track, k) => {
+      trackArray.push(tracklist[k]);
       let liTrack = document.createElement("li");
       liTrack.innerHTML = `
-      <div class="row d-flex align-items-center justify-content-start w-100">
+      <div class="trackWrap row d-flex align-items-center justify-content-start w-100">
         <div style="width: 4.7rem;" class="mb-3 ms-3">
         <img class="img-fluid" src="${track.album.cover_small}" alt="">
         </div>
@@ -69,6 +72,26 @@ let getTracks = async () => {
       </a>
     </div>
     </div>`;
+    });
+    const trackWrap = Array.from(document.querySelectorAll(".trackWrap"));
+
+    trackWrap.forEach((el, k) => {
+      // el.addEventListener("mouseenter", () => {
+      //   const numPlayHover = el.firstChild;
+      //   let trackIndex = numPlayHover.innerHTML;
+
+      //   el.addEventListener("mouseleave", () => {
+      //     const numPlayHover = el.firstChild;
+      //     numPlayHover.innerHTML = trackIndex;
+      //   });
+      // });
+
+      el.addEventListener("click", () => {
+        imgPlayer.setAttribute("src", `${trackArray[k].album.cover_medium}`);
+        songPlayer.innerHTML = `${trackArray[k].title}`;
+        artistPlayer.innerHTML = `${trackArray[k].artist.name}`;
+        durationPlayer.innerHTML = `${formatDuration(trackArray[k].duration)}`;
+      });
     });
   }
 };

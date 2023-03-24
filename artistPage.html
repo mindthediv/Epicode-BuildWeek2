@@ -740,6 +740,7 @@
             <!-- left box -->
             <div class="leftPlayer d-flex align-items-center">
               <img
+                id="imgPlayer"
                 style="max-width: 75px; max-height: 75px"
                 src="https://placekitten.com/900"
                 alt=""
@@ -747,11 +748,13 @@
 
               <div>
                 <span
+                  id="songPlayer"
                   class="ms-3 fs-4"
                   style="display: block; width: fit-content"
                   >Song title</span
                 >
                 <span
+                  id="artistPlayer"
                   class="ms-3 mt-2"
                   style="display: block; width: fit-content"
                   ><small>Song Artist</small></span
@@ -799,7 +802,7 @@
               <div
                 class="bottomCenter d-flex justify-content-center align-items-center mb-4 w-100"
               >
-                <span class="me-4 text-end">0:38</span>
+                <span class="me-4 text-end">0:00</span>
                 <div
                   class="progress bg-secondary"
                   role="progressbar"
@@ -809,14 +812,14 @@
                   aria-valuemax="100"
                   style="height: 5px; width: 70%"
                 >
-                  <div class="progress-bar bg-light" style="width: 10%"></div>
+                  <div class="progress-bar bg-light" style="width: 0%"></div>
                 </div>
-                <span class="ms-4">4:21</span>
+                <span id="durationPlayer" class="ms-4">4:21</span>
               </div>
             </div>
             <!-- right box -->
             <div
-              class="rightPlayer d-none d-md-flex align-items-center justify-content-around fs-4 text-secondary"
+              class="rightPlayer d-flex align-items-center justify-content-around fs-4 text-secondary"
             >
               <span><i class="bi bi-mic fs-5"></i></span>
               <span><i class="bi bi-list"></i></span>
@@ -833,6 +836,83 @@
               <span><i class="bi bi-arrows-angle-expand fs-5"></i></span>
             </div>
           </div>
+        </div>
+      </div>
+      <!-- NAVBAR MOBILE-->
+      <div id="navbarSmallScreen" class="d-md-none">
+        <div>
+          <ul class="d-flex justify-content-around">
+            <li>
+              <a
+                href="#"
+                class="d-flex flex-column justify-content-center align-items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  fill="currentColor"
+                  class="bi bi-house-door"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z"
+                  />
+                </svg>
+                <span class="paginaCorrente">Home</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                class="d-flex flex-column justify-content-center align-items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                  />
+                </svg>
+                <span>Search</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                class="d-flex flex-column justify-content-center align-items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  fill="currentColor"
+                  class="bi bi-music-note-list"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"
+                  />
+                  <path fill-rule="evenodd" d="M12 3v10h-1V3h1z" />
+                  <path
+                    d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"
+                  />
+                </svg>
+                <span>Your Library</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </main>

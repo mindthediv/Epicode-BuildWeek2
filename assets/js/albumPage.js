@@ -47,7 +47,7 @@ let popolaAlbum = (
 let createBox = (boxImg, albumId, boxTitle, boxArtist, artistId, appendRow) => {
   let newCol = document.createElement("div");
   newCol.setAttribute("class", "col-2");
-  newCol.innerHTML = `<div style="position:relative" class="fetchBox pt-4 p-3 d-flex flex-column text-light bg-dark rounded"> <img class="rounded mb-2" src="${boxImg}" style="max-width: 78%; margin:0 auto" alt="" /><div style:"margin:0 auto" class="d-flex flex-column px-4 mx-1 align-items-start"><button type="button" style="position:absolute;top:54%;right:17%;background-color:#1ED760;border: none; scale: 2.5; border-radius: 50%;" class="verde me-4"><i class="bi bi-play-fill"></i></button> <a href="./albumPage.html?album_id=${albumId}"  style="text-decoration: none; color: white;"><h6 class="text-truncate">${boxTitle}</h6></a><span class="text-secondary"><a href="./artistPage.html?artist_id=${artistId}" style="text-decoration: none; color: grey;" class='text-truncate'>${boxArtist}</a></span></div></div>`;
+  newCol.innerHTML = `<div class="fetchBox pt-4 p-3 mx-3 d-flex flex-column text-light bg-dark rounded"> <img class="rounded mb-2" src="${boxImg}" style="max-width: 78%; margin:0 auto" alt="" /><div style:"margin:0 auto" class="d-flex flex-column px-4 mx-1 align-items-start"><button type="button" style="background-color:#1ED760;border: none;  border-radius: 50%;" class="d-none verde me-4"><i class="bi bi-play-fill"></i></button> <a href="./albumPage.html?album_id=${albumId}"  style="text-decoration: none; color: white;" class='text-truncate w-100'><h6>${boxTitle}</h6></a><span class="text-secondary text-truncate w-100"><a href="./artistPage.html?artist_id=${artistId}" style="text-decoration: none; color: grey;">${boxArtist}</a></span></div></div>`;
 
   appendRow.appendChild(newCol);
 };
@@ -115,11 +115,6 @@ let getAlbum = async () => {
 
         let iconPlay = numPlayHover.firstChild;
         iconPlay.addEventListener("click", () => {
-          // if (numPlayHover.innerHTML === '<i class="bi bi-play-fill"></i>') {
-          //   numPlayHover.innerHTML = '<i class="bi bi-pause-fill"></i>';
-          // } else {
-          //   numPlayHover.innerHTML = '<i class="bi bi-play-fill"></i>';
-          // }
           imgPlayer.setAttribute("src", `${trackArray[k].album.cover_medium}`);
           songPlayer.innerHTML = `${trackArray[k].title}`;
           artistPlayer.innerHTML = `${trackArray[k].artist.name}`;
