@@ -24,6 +24,7 @@ let popolaAlbum = (albumImg, albumTitle, nb_fan, tracklist) => {
 </div>
 `;
 };
+//AAAAAA
 // `<img width='200' src="${albumImg}"><h2>${albumTitle}</h2>`
 // FETCH E AVVIO CREAZIONE ELEMENTI
 
@@ -37,7 +38,7 @@ let getTracks = async () => {
     tracklist.forEach((track) => {
       let liTrack = document.createElement("li");
       liTrack.innerHTML = `
-      <div class="row d-flex align-items-center justify-content-center w-100">
+      <div class="row d-flex align-items-center justify-content-start w-100">
         <div style="width: 4.7rem;" class="mb-3 ms-3">
         <img class="img-fluid" src="${track.album.cover_small}" alt="">
         </div>
@@ -51,6 +52,7 @@ let getTracks = async () => {
         <div class="col-3 d-flex align-items-end">
         <p class="d-sm-none d-md-flex text-end">${Math.floor(
           track.duration / 60
+          //forza napoli
         )}:${(track.duration % 60).toString().padStart(2, "0")}</p>
         </div>
       </div>
