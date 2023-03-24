@@ -132,18 +132,12 @@ nav .navigation ul li a .fa:focus {
   background-color: black;
   color: white;
   padding: 12px;
-  display: block;
 }
 #dx img {
   width: 50px;
   height: 50px;
 }
 
-@media screen and (max-width: 768px) {
-  #dx {
-    display: none;
-  }
-}
 /* PLAYER */
 #player {
   width: 100%;
