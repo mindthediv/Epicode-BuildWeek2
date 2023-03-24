@@ -35,15 +35,14 @@
         background-image: linear-gradient(rgb(0, 0, 0, 0.8), rgb(0, 0, 0));
       }
       #navbarSmallScreen ul {
-      width: 100%;
-      list-style-type: none;
-      margin-top: 2px;
-    }
-      #navbarSmallScreen  li a{
-         
-          color: white;
-          text-decoration: none;
-        }
+        width: 100%;
+        list-style-type: none;
+        margin-top: 2px;
+      }
+      #navbarSmallScreen li a {
+        color: white;
+        text-decoration: none;
+      }
 
       #trasparente {
         background-color: transparent;
@@ -54,8 +53,8 @@
         background-position-x: center;
         background-position-y: 20%;
         background-repeat: no-repeat;
-        background-origin: content-box;
-        background-size: 100%;
+        /* background-origin: content-box; */
+        background-size: cover;
         height: 300px;
         display: flex;
         flex-direction: column;
@@ -86,7 +85,7 @@
 
       #questaUl li {
         color: white;
-        background-color: rgb(32, 30, 30);
+        background-color: rgb(0, 0, 0);
         border: none;
       }
 
@@ -464,8 +463,8 @@
                 (ARTIST > artistAero, actionBar, short-tracklist, row scroll) -->
           <!-- <div class="col-8 bg-success">CONTENUTO FETCH CARD ECC</div> -->
           <div
-            class="col col-sm-12 col-lg-8 m-0 centroMain"
-            style="background-color: rgb(32, 30, 30)"
+            class="col col-12 col-md-8 m-0 centroMain"
+            style="background-color: rgb(0, 0, 0); overflow-x: hidden"
             id="center"
           >
             <!-- Sub Container della colonna centrale -->
@@ -545,9 +544,7 @@
               </div>
             </div>
             <!-- ROW MAIN CARD -->
-            <div class="row text-bg-dark">
-              <div id="questoDiv">QUESTA E LA ARTIST PAGE</div>
-            </div>
+            <div class="row text-bg-dark p-0" id="questoDiv"></div>
             <!-- </div> -->
             <div class="row m-4 mt-5">
               <div class="col col-12">
@@ -607,7 +604,7 @@
           </div>
 
           <!-- SIDERIGHT -->
-          <div id="dx" class="d-none col-md-2 d-md-flex flex-column">
+          <div id="dx" class="d-none col-2 d-md-flex flex-column">
             <div
               id="attivita"
               class="d-flex justify-content-between p-2 ps-0 align-items-center"
@@ -654,7 +651,6 @@
           </div>
         </div>
 
-       
         <!-- NAVBAR MOBILE-->
         <div id="navbarSmallScreen" class="d-md-none">
           <div>
@@ -679,7 +675,7 @@
                   <span class="paginaCorrente">Home</span>
                 </a>
               </li>
-    
+
               <li>
                 <a
                   href="#"
@@ -700,7 +696,7 @@
                   <span>Search</span>
                 </a>
               </li>
-    
+
               <li>
                 <a
                   href="#"
@@ -733,7 +729,7 @@
           </div>
         </div>
         <!--Navbar Desktop-->
-         <!-- PLAYER -->
+        <!-- PLAYER -->
         <!-- row fixed bottom 0 -->
         <div
           class="row d-none d-md-block"

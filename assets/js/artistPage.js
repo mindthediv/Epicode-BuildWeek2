@@ -9,9 +9,9 @@ let tracklist = [];
 const questaUl = document.getElementById("questaUl");
 let popolaAlbum = (albumImg, albumTitle, nb_fan, tracklist) => {
   questoDiv.innerHTML = `
-<div class='row'>
+
     <div class="col col-12 pt-4 fotoArtista" style="background-image: url(${albumImg});">                
-      <div class="contenitore m-3">
+      <div class="contenitore my-3">
         <div id="artistaVer">
           <p><i class="bi bi-patch-check-fill"></i>
           Artista verificato</p>
@@ -21,10 +21,9 @@ let popolaAlbum = (albumImg, albumTitle, nb_fan, tracklist) => {
       </div>
     </div>
   
-</div>
+
 `;
 };
-//AAAAAAA
 // `<img width='200' src="${albumImg}"><h2>${albumTitle}</h2>`
 // FETCH E AVVIO CREAZIONE ELEMENTI
 
