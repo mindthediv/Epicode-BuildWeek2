@@ -94,9 +94,9 @@ let getAlbum = async () => {
           albumData.artist.id
         }">${
           albumData.artist.name
-        }</a></small></span> </div> <span style="width: 30%; color: lightgray;">${numberWithCommas(
+        }</a></small></span> </div> <span class="d-none d-sm-block" style="width: 30%; color: lightgray;">${numberWithCommas(
           rndViews
-        )}</span> <span style="width: 10%; text-align: right; color: lightgray;">${duration}</span></div>`;
+        )}</span> <span class="d-none d-sm-block" style="width: 10%; text-align: right; color: lightgray;">${duration}</span></div>`;
       }
     }
     const trackWrap = Array.from(document.querySelectorAll(".trackWrap"));
