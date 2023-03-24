@@ -51,6 +51,7 @@ let getTracks = async () => {
         <div class="col-3 d-flex align-items-end">
         <p class="d-sm-none d-md-flex text-end">${Math.floor(
           track.duration / 60
+          //forza napoli
         )}:${(track.duration % 60).toString().padStart(2, "0")}</p>
         </div>
       </div>
