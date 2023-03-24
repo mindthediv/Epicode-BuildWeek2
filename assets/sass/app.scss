@@ -137,6 +137,20 @@ nav .navigation ul li a .fa:focus {
   border-radius: 0.5em;
 }
 
+.fetchBox:hover {
+  position: relative !important;
+  img {
+  }
+  .verde {
+    display: block !important;
+    position: absolute !important;
+    bottom: 40%;
+    right: 2%;
+    font-size: 1.4em;
+    padding: 0.5em;
+  }
+}
+
 /* SIDERIGHT */ ////////////////
 #dx {
   font-size: 0.8rem;
